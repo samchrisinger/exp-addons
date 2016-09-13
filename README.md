@@ -1,60 +1,18 @@
-# Experimenter Addons
+# Exp-player
 
-A shared home for all of our shared addons
+An Ember addon for the Experimenter player. This repo will eventually include:
 
-# Installation
+- the core exp-player component
+- exp- components to be used with the player
+      
+## Frame development
 
-## Install the submodule:
+This addon includes blueprints for creating frames. If you want to create a frame in the shared addon project use:
 
-This repo module should included as a submodule in the Ember project where you want to use these addons.
-An example setup might be:
-```
-/<ember-project>
-  /ext
-    /exp-addons
-  /app
-    ...    
-```
+`ember g addon-exp-frame exp-<name>`
 
-And the corresponding package.json entries are:
+otherwise to generate a project-specific frame use:
 
-```json
-{
-  ...,
-  "dependencies": {
-    "exp-player": "file:./ext/exp-addons/exp-player",
-    "exp-models": "file:./ext/exp-addons/exp-models"
-  }
-}
+`ember g exp-frame exp-<name>`
 
-```
-
-For example:
-
-```bash
-cd lib
-git submodule init
-git submodule update
-cd exp-models
-npm install
-```
-
-## Development
-
-If your work requires that you make changes to one of the exp-addon modules you can use `npm link` for
-local development. This allows you to make changes to the code without having to push to github. To do
-this:
-
-```bash
-cd ext/exp-addons/exp-player
-npm link
-cd ../../..
-npm link exp-player
-```
-
-Any changes made in exp-player (except adding files, in which case you may need to relink the module) should
-now be automagically reflected in the consuming project.
-
-### COS is Hiring!
-
-Want to help save science? Want to get paid to develop free, open source software? [Check out our openings!](http://cos.io/jobs)
+which will create a new component and corresponding template for the new frame.
